@@ -16,8 +16,12 @@ public class TestPointFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 temp = Input.mousePosition;
-        temp.z = 0.0f; // Set this to be the distance you want the object to be placed in front of the camera.
-        this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        //Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        //Vector3 playerPos = Camera.main.ScreenToWorldPoint(rb.transform.position);
+        
+        var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        rb.transform.position += move * speed * Time.deltaTime * 5;
+        Vector3 playerPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 1000));
+        
     }
 }
