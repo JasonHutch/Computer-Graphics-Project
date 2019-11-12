@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SidetoSide : MonoBehaviour
+public class ColorsGreen : MonoBehaviour
 {
     public float jumpForce = 3.0f;
     private float moveInputX;
@@ -17,42 +17,35 @@ public class SidetoSide : MonoBehaviour
 
     float speed = 1f;
     float delta = 3f;  //delta is the difference between min y to max y.
-    float x = 145;
+    float y = -76;
     bool up = true;
     void Update()
     {
-        if (x > 270 && x < 280)
+        if (y > -30 && y < -15)
             up = false;
-        if (x < 110 && x > 95)
+        if (y < -120 && y > -130)
             up = true;
         if (up)
-            x = right(x);
+            y = upsy(y);
         else
-            x = left(x);
+            y = down(y);
 
 
 
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    float upsy(float y)
     {
-        if (collision.tag == "Blue")
-        {
-            up = !up;
-        }
-    }
-    float right(float x)
-    {
-        x = transform.position.x + 1;
-        Vector3 pos = new Vector3(x, transform.position.y, transform.position.z);
+        y = transform.position.y + 1;
+        Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
         transform.position = pos;
-        return x;
+        return y;
     }
-    float left(float x)
+    float down(float y)
     {
-        x = transform.position.x - 1;
-        Vector3 pos = new Vector3(x, transform.position.y, transform.position.z);
+        y = transform.position.y - 1;
+        Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
         transform.position = pos;
-        return x;
+        return y;
     }
 
 }
