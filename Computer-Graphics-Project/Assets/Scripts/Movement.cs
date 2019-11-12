@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     private float moveInputX;
     private float moveInputY;
     private Rigidbody2D rb;
+    private float moveInput;
+
 
     private void Start()
     {
@@ -17,10 +19,8 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveInputX = Input.GetAxisRaw("Mouse X");
-        moveInputY = Input.GetAxisRaw("Mouse Y");
-
-        rb.velocity = new Vector2(moveInputX * speed, moveInputY * speed);
+        moveInput = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
 
     private void Update()

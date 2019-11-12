@@ -7,9 +7,12 @@ public class TestPointFollow : MonoBehaviour
     private bool isMoving;
     public GameObject clickAnimation;
     private Rigidbody2D rb;
+    
+    
     // Use this for initialization
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -18,6 +21,8 @@ public class TestPointFollow : MonoBehaviour
     {
         Vector3 temp = Input.mousePosition;
         temp.z = 0.0f; // Set this to be the distance you want the object to be placed in front of the camera.
-        this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        rb.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        rb.transform.position = new Vector3(temp.x, temp.y, 0.0f);
+        
     }
 }
