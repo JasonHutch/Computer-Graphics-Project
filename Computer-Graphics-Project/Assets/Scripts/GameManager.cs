@@ -27,4 +27,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public static void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }
