@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public static int playerScore = 0;
     public Text Score;
+    public float timer = 0;
+    public Text startText; // used for showing countdown from 3, 2, 1 
     void Start()
     {
         
@@ -16,8 +18,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Score.text = "Score\n" + playerScore.ToString();
+        timer += Time.deltaTime;
 
+
+        string minutes = Mathf.Floor(timer / 60).ToString("00");
+        string seconds = (timer % 60).ToString("00");
+        startText.text = minutes + " " + seconds;
     }
     public void MainMenu()
     {
@@ -30,5 +36,6 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+
     }
 }
