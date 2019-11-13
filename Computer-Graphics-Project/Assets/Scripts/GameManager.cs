@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static int playerScore = 0;
+    public static int scoreOrbsRemaining = 18;
     public Text Score;
     void Start()
     {
