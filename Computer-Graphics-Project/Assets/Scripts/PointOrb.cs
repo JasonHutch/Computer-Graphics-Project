@@ -12,7 +12,12 @@ public class PointOrb : MonoBehaviour
         if (collision.tag == "Player")
         {
             GameManager.playerScore += 100;
+            GameManager.scoreOrbsRemaining=GameManager.scoreOrbsRemaining-1;
             Destroy(gameObject);
+            if(GameManager.scoreOrbsRemaining == 0)
+            {
+                GameManager.Winner();
+            }
         }
 
     }

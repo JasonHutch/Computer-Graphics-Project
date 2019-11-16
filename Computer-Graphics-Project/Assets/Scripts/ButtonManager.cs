@@ -11,12 +11,15 @@ public class ButtonManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-   
+        GameManager.scoreOrbsRemaining = 18;
+
 
     }
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        GameManager.scoreOrbsRemaining = 18;
+        Debug.Log(GameManager.scoreOrbsRemaining);
     }
     public void Quit ()
     {

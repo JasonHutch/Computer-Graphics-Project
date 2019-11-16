@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Score.text = "Score\n" + playerScore.ToString();
-
     }
     public void MainMenu()
     {
@@ -31,5 +30,10 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+    }
+    public static void Winner()
+    {
+        SceneManager.LoadScene("Winner");
+        Debug.Log("Winner screen shown");
     }
 }
