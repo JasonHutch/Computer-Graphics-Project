@@ -42,14 +42,14 @@ public class SidetoSide : MonoBehaviour
     }
     float right(float x)
     {
-        x = transform.position.x + 1;
+        x = transform.position.x + .5f;
         Vector3 pos = new Vector3(x, transform.position.y, transform.position.z);
         transform.position = pos;
         return x;
     }
     float left(float x)
     {
-        x = transform.position.x - 1;
+        x = transform.position.x - .5f;
         Vector3 pos = new Vector3(x, transform.position.y, transform.position.z);
         transform.position = pos;
         return x;

@@ -35,14 +35,14 @@ public class UpandDown : MonoBehaviour
     }
     float upsy( float y)
     {
-        y = transform.position.y + 1;
+        y = transform.position.y + .5f;
         Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
         transform.position = pos;
         return y;
     }
     float down(float y)
     {
-        y = transform.position.y - 1;
+        y = transform.position.y - .5f;
         Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
         transform.position = pos;
         return y;

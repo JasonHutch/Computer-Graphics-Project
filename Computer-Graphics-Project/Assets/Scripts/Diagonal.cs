@@ -36,16 +36,16 @@ public class Diagonal : MonoBehaviour
     }
     float upsy(float y, float x)
     {
-        y = transform.position.y + 1;
-        x = transform.position.x + 1;
+        y = transform.position.y + .5f;
+        x = transform.position.x + .5f;
         Vector3 pos = new Vector3(x, y, transform.position.z);
         transform.position = pos;
         return y;
     }
     float down(float y, float x)
     {
-        y = transform.position.y - 1;
-        x = transform.position.x - 1;
+        y = transform.position.y - .5f;
+        x = transform.position.x - .5f;
         Vector3 pos = new Vector3(x, y, transform.position.z);
         transform.position = pos;
         return y;
