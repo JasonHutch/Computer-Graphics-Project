@@ -5,11 +5,6 @@ using UnityEngine;
 public class PointOrb : MonoBehaviour
 {
     public AudioSource beep;
-    
-  
-        
-    
-    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
